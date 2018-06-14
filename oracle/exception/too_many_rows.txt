@@ -1,0 +1,11 @@
+declare
+newsal emp.sal%type;
+begin
+select sal into newsal from emp;
+exception
+when too_many_rows then
+dbms_output.put_line('返回的记录太多了');
+when others then
+dbms_output.put_line('未知异常');
+end;
+/

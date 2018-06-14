@@ -1,0 +1,7 @@
+create procedure pro_insertDept is
+begin
+insert into dept values(77,'市场拓展部','JILIN');
+commit;
+dbms_output.put_line('插入新数据成功');
+end pro_insertDept;
+/

@@ -1,0 +1,6 @@
+begin
+for v_test in (select * from test) loop
+dbms_output.put_line(v_test.id||' '||v_test.name);
+end loop;
+end;
+/

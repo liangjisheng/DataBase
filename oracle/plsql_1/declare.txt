@@ -1,0 +1,7 @@
+declare
+sname varchar2(20) := 'li';
+begin
+sname := sname || ' and tom';
+dbms_output.put_line(sname);
+end;
+/

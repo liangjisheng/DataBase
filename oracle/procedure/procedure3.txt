@@ -1,0 +1,11 @@
+create or replace procedure pro_square(
+num in out number,flag in boolean ) is
+i int:=2;
+begin
+if flag then
+num:=power(num,i);
+else
+num:=sqrt(num);
+end if;
+end;
+/

@@ -1,0 +1,11 @@
+declare
+Num_sal number;
+Var_ename varchar2(20);
+begin
+/* 检索指定的值并存储到变量中 */
+select ename,sal into Var_ename,Num_sal from emp
+where empno=7369;
+/* 输出变量的值 */
+dbms_output.put_line(Var_ename||'的工资是'||Num_sal);
+end;
+/

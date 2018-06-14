@@ -1,0 +1,63 @@
+SQL> select '从左边删除字符，在第二个参数中出现过的' from dual;
+
+'从左边删除字符，在第二个参数中出现过                                           
+--------------------------------------                                          
+从左边删除字符，在第二个参数中出现过的                                          
+
+SQL> select ltrim('  oracle  ',' ') from dual;
+
+LTRIM('O                                                                        
+--------                                                                        
+oracle                                                                          
+
+SQL> select ltrim('aaoracle','a') from duall;
+select ltrim('aaoracle','a') from duall
+                                  *
+第 1 行出现错误: 
+ORA-00942: 表或视图不存在 
+
+
+SQL> select ltrim('aaoracle','a') from dual;
+
+LTRIM(                                                                          
+------                                                                          
+oracle                                                                          
+
+SQL> select length(ltrim('aaoracle','a')),length('aaoracle') from dual;
+
+LENGTH(LTRIM('AAORACLE','A')) LENGTH('AAORACLE')                                
+----------------------------- ------------------                                
+                            6                  8                                
+
+SQL> select length('莱昂纳多') from dual;
+
+LENGTH('莱昂纳多')                                                              
+------------------                                                              
+                 4                                                              
+
+SQL> select lengthb('莱昂纳多') from dual;
+
+LENGTHB('莱昂纳多')                                                             
+-------------------                                                             
+                  8                                                             
+
+SQL> select length('liangjisheng') form dual;
+select length('liangjisheng') form dual
+                                   *
+第 1 行出现错误: 
+ORA-00923: 未找到要求的 FROM 关键字 
+
+
+SQL> select length('liangjisheng') from dual;
+
+LENGTH('LIANGJISHENG')                                                          
+----------------------                                                          
+                    12                                                          
+
+SQL> select lengthb('lishuyu') from dual;
+
+LENGTHB('LISHUYU')                                                              
+------------------                                                              
+                 7                                                              
+
+SQL> spool off;

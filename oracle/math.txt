@@ -1,0 +1,25 @@
+select abs(-3) from dual;
+
+select acos(1) from dual;
+
+select cos(1) from dual;
+
+select ceil(5.4) from dual;
+
+select floor(5.8) from dual;
+
+select log(2,4) from dual;
+
+select mod(3,6) from dual;
+
+select power(2,8) from dual;
+
+select round(3.456,2) from dual;
+
+select sqrt(4) from dual;
+
+select trunc(3.456,2) from dual; -- 在小数点后2为截断
+
+select trunc(sal/30) from emp; -- 显示在一个月为30天的情况下，所有员工的日薪金，忽略余数
+
+select floor(sal/30),ename from emp;

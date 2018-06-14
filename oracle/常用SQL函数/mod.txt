@@ -1,0 +1,13 @@
+SQL> select 'ว๓ำเ' from dual;
+
+'ว๓                                                                             
+----                                                                            
+ว๓ำเ                                                                            
+
+SQL> select mod(123,4),mod(4,123) from dual;
+
+MOD(123,4) MOD(4,123)                                                           
+---------- ----------                                                           
+         3          4                                                           
+
+SQL> spool off;

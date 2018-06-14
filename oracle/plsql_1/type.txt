@@ -1,0 +1,10 @@
+declare 
+sal emp.sal%type;
+mysal number(4):=3000;
+totalsal mysal%type;
+begin
+select sal into sal from emp where empno=7934;
+totalsal := sal+mysal;
+dbms_output.put_line(totalsal);
+end;
+/

@@ -1,0 +1,9 @@
+begin
+update emp set sal=sal*1.2 where job='SALESMAN';
+if sql%notfound then --如果update语句没有影响到任何一行数据
+dbms_output.put_line('没有雇员工资需要上调');
+else
+dbms_output.put_line('有'||sql%rowcount||'个雇员工资上调20%');
+end if;
+end;
+/

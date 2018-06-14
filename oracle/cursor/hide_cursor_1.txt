@@ -1,0 +1,9 @@
+begin
+update test set name='asdfghjkl' where id=5;
+if sql%rowcount=0 then
+dbms_output.put_line('没有找到要更新的记录');
+insert into test values(5,'asdfghjkl');
+commit;
+end if;
+end;
+/

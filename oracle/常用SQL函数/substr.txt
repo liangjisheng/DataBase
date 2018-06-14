@@ -1,0 +1,37 @@
+SQL> select '返回从第几个字符指定的字符串' from dual;
+
+'返回从第几个字符指定的字符                                                     
+----------------------------                                                    
+返回从第几个字符指定的字符串                                                    
+
+SQL> select substr('oracle',1,3) c1, substrb('oracle',1,3) c2 from dual;
+
+C1  C2                                                                          
+--- ---                                                                         
+ora ora                                                                         
+
+SQL> select substr('学习数据库',1,3) c3,substrb('oracle',1,3) c4 from dual;
+
+C3     C4                                                                       
+------ ---                                                                      
+学习数 ora                                                                      
+
+SQL> select substr('学习数据库',1,3) c3,substrb('学习数据库',1,3) c4 from dual;
+
+C3     C4                                                                       
+------ ---                                                                      
+学习数 学                                                                       
+
+SQL> select substr('oracle',-2,3) c1,substrb('oracle',-2,3) c2 from dual;
+
+C1 C2                                                                           
+-- --                                                                           
+le le                                                                           
+
+SQL> select substr('学习数据库',-2,3) c1,substrb('学习数据库',-2,3) from dual;
+
+C1   SU                                                                         
+---- --                                                                         
+据库 库                                                                         
+
+SQL> spool off;

@@ -1,0 +1,18 @@
+SQL> ed
+已写入 file afiedt.buf
+
+  1  select to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') d1,months_between('01-2月-12',sysdate) d2,
+  2* months_between('01-2月-12',trunc(sysdate)) d3 from dual
+SQL> /
+
+D1                          D2         D3                                       
+------------------- ---------- ----------                                       
+2016-05-05 16:41:48 -51.151474 -51.129032                                       
+
+SQL> select months_between('29-2月-12','29-12月-11') d1 from dual;
+
+        D1                                                                      
+----------                                                                      
+         2                                                                      
+
+SQL> spool off;

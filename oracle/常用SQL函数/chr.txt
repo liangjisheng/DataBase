@@ -1,0 +1,7 @@
+SQL> select chr(97),chr(65),chr(49),chr(57),chr(54992),chr(47610) from dual;
+
+C C C C CH CH                                                                   
+- - - - -- --                                                                   
+a A 1 9 жа Йњ                                                                   
+
+SQL> spool off;

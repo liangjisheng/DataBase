@@ -1,0 +1,25 @@
+create table student_p2(
+s_id varchar2(10) primary key,
+s_name varchar2(20),
+s_language varchar2(20) not null,
+s_chinese number(4,1) ,
+s_math number(4,1) ,
+s_foreign number(4,1),
+s_category varchar2(6) generated always as 
+(
+case 
+when s_foreign>=130 then 'A'
+when s_foreign>=115 then 'B'
+when s_foreign>=100 then 'C'
+else 'D'
+end
+)virtual
+)
+partition by list(s_category)
+(
+partition p_a values('A'),
+partition p_b values('B'),
+partition p_c values('C'),
+partition p_d values('D')
+)
+/

@@ -1,0 +1,19 @@
+SQL> select '去小于等于参数值的最大整数' from dual;
+
+'去小于等于参数值的最大整                                                       
+--------------------------                                                      
+去小于等于参数值的最大整数                                                      
+
+SQL> select floor(12.34),floor(12.98) from dual;
+
+FLOOR(12.34) FLOOR(12.98)                                                       
+------------ ------------                                                       
+          12           12                                                       
+
+SQL> select floor(-12.34),floor(-12.34) from dual;
+
+FLOOR(-12.34) FLOOR(-12.34)                                                     
+------------- -------------                                                     
+          -13           -13                                                     
+
+SQL> spool off;

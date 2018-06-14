@@ -1,0 +1,13 @@
+declare
+v_sal emp.sal%type;
+v_ename emp.ename%type;
+begin
+select ename,sal into v_ename,v_sal 
+from emp where empno=&no;
+if v_sal<3000 then
+update emp set comm=sal*0.1 where ename=v_ename;
+else
+null;
+end if;
+end;
+/

@@ -1,0 +1,11 @@
+conn sys/tiger as sysdba;
+
+grant create view to scott;
+
+conn scott/tiger;
+
+create or replace view empdetail as select empno,ename,job,hiredate,emp.deptno,dname from emp join dept on emp.deptno=dept.deptno with read only;
+
+select * from empdetail;
+
+drop empdetail;

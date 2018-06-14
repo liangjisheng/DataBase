@@ -1,0 +1,39 @@
+错误码	   异常名称		   异常说明
+ORA-00001  DUP_VAL_ON_INDEX	   向有唯一索引约束的裂伤插入重复值
+
+ORA-00051  TIMEOUT_ON_RESOURCE     在等待资源是发生超时
+
+ORA-00061  TRANSACTION_BACKED_OUT  由于发生死锁事物是被撤销
+
+ORA-01001  INVALID_CURSOR	   非法执行的游标操作
+
+ORA-01012  NOT_LOGGED_ON	   没有登录到数据库就进行操作
+
+ORA-01017  LOGIN_DENIED		   无效的用户名/口令
+
+ORA-01403  NO_DATA_FOUND	   没有找到数据
+
+ORA-01422  TOO_MANY_ROWS	   SELECT INTO 没有匹配任何行
+
+ORA-01476  ZEOR_DIVIDE		   被零除
+
+ORA-01722  INVALID_NUMBER	   其他类型转换成数值时失败
+
+ORA-06500  STORAGE_ERROR	   PL/SQL 运行时内存不足引发错误
+
+ORA-06501  PROGRAM_ERROR	   内部PL/SQL 错误，需要重新安装数据字典视图
+				   和PL/SQL 包
+
+ORA-06502  VALUE_ERROR		   发生截断，算术错误
+
+ORA-06504  ROWTYPE_MISMATCH	   有不兼容的行类型
+
+ORA-06511  CURSOR_ALREADY_OPEN	   试图打开以打开的游标
+
+ORA-06530  ACCESS_INTO_NULL	   为NULL对象赋值
+
+ORA-06531  COLLECTION_IS_NULL	   将不存在的方法应用与PL/SQL 
+
+ORA-06532  SUBSCRIPT_OUTSIDE_LIMIT 对嵌套表或索引超出范围
+
+ORA-06533  SUMSCRIPT_BEYOND_COUNT  对嵌套表或索引大于集合中元素个数

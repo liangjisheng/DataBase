@@ -1,0 +1,15 @@
+declare
+cursor test_cursor is select * from test;
+v_test test%rowtype; -- v_test test_cursor%rowtype; р╡©ирт
+begin
+if not test_cursor%isopen then
+open test_cursor;
+end if;
+loop
+fetch test_cursor into v_test;
+exit when test_cursor%notfound;
+dbms_output.put_line(v_test.id||' '||v_test.name);
+end loop;
+close test_cursor;
+end;
+/

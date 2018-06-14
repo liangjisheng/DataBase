@@ -1,0 +1,7 @@
+declare 
+sname varchar2(20) default 'li';
+begin
+select ename into sname from emp where empno=7934;
+dbms_output.put_line(lower(sname));
+end;
+/

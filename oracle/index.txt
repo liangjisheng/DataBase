@@ -1,0 +1,32 @@
+create index tname_idx on test(name);
+
+create unique index tid_idx on test(id);
+
+alter index tname_idx rebuild noreverse;
+
+alter index tname_idx rebuild reverse;
+
+alter index tname_idx rename to t_idx;
+
+alter index t_idx rename to tname_idx;
+
+alter index tname_idx rebuild nocompress;
+
+alter index tname_idx rebuild compress;
+
+alter index tname_idx rebuild nologging;
+
+alter index tname_idx rebuild logging;
+
+select index_name,index_type,table_name,uniqueness from user_indexes;
+
+select index_name,table_name,column_name,column_position,descend from user_ind_columns;
+
+select * from user_ind_expressions;
+
+alter table test modify(name unique);
+
+select constraint_name,constraint_type,index_name from user_constraints where table_name='TEST' order by 2 desc;
+
+select index_name,index_type,table_name from user_indexes;
+

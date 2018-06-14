@@ -1,0 +1,7 @@
+begin
+insert into dept values(10,'公关部','北京');
+exception
+when dup_val_on_index then
+dbms_output.put_line('在deptno列上不能出现重复值');
+end;
+/

@@ -1,0 +1,13 @@
+SQL> select concat(concat('lishu','yu'),'liangjisheng') from dual;
+
+CONCAT(CONCAT('LISH                                                             
+-------------------                                                             
+lishuyuliangjisheng                                                             
+
+SQL> select concat(concat('lishu','yu'),' liangjisheng') from dual;
+
+CONCAT(CONCAT('LISHU                                                            
+--------------------                                                            
+lishuyu liangjisheng                                                            
+
+SQL> spool off;

@@ -1,0 +1,10 @@
+declare 
+v_ename emp.ename%type;
+begin
+select ename into v_ename from emp where empno=&gno;
+dbms_output.put_line('Ãû×Ö:'||v_ename);
+exception
+when no_data_found then
+dbms_output.put_line('±àºÅÃ»ÓÐ');
+end;
+/

@@ -1,0 +1,12 @@
+declare
+cursor emp_cursor is select ename,sal from emp;
+begin
+open emp_cursor;
+for emp_record1 in emp_cursor loop
+dbms_output.put_line(emp_record1.ename);
+end loop;
+exception
+when cursor_already_open then
+dbms_output.put_line('游标已经打开');
+end;
+/

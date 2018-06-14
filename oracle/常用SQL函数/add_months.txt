@@ -1,0 +1,26 @@
+SQL> select '在第一个参数的基础上加上第二个参数个月' from dual;
+
+'在第一个参数的基础上加上第二个参数个                                           
+--------------------------------------                                          
+在第一个参数的基础上加上第二个参数个月                                          
+
+SQL> select add_months(sysdate,3),add_months(sysdate,-2) from dual;
+
+ADD_MONTHS(SYS ADD_MONTHS(SYS                                                   
+-------------- --------------                                                   
+05-8月 -16     05-3月 -16                                                       
+
+SQL> select add_months(to_date('01-1-2012 11:12:13','dd-mon-yyyy hh24:mi:ss'),5)from dual;
+select add_months(to_date('01-1-2012 11:12:13','dd-mon-yyyy hh24:mi:ss'),5)from dual
+                          *
+第 1 行出现错误: 
+ORA-01843: 无效的月份 
+
+
+SQL> select add_months(to_date('01-1月-2012 11:12:13','dd-mon-yyyy hh24:mi:ss'),5)from dual;
+
+ADD_MONTHS(TO_                                                                  
+--------------                                                                  
+01-6月 -12                                                                      
+
+SQL> spool off;

@@ -1,0 +1,22 @@
+create or replace trigger test_insert
+after insert on test
+begin
+dbms_output.put_line('在test表中插入数据');
+end test_insert;
+
+create or replace trigger test_delete
+after delete on test
+begin
+dbms_output.put_line('删除数据');
+end test_delete;
+
+create or replace trigger test_delete
+after delete on test
+for each row
+begin
+dbms_output.put_line('删除数据');
+end test_delete;
+
+delete from test where id between 5 and 9;
+
+select trigger_name from user_triggers where trigger_name='TEST_INSERT';

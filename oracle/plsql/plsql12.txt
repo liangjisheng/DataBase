@@ -1,0 +1,11 @@
+declare
+s int:=0;
+i int:=0;
+begin
+while i<=99 loop
+i:=i+1;
+s:=s+i;
+end loop;
+dbms_output.put_line('前100个自然数的和是'||s);
+end;
+/

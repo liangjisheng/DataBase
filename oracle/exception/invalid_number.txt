@@ -1,0 +1,6 @@
+begin
+update emp set sal=sal+'loo';
+exception
+when invalid_number then
+dbms_output.put_line('输入的数字不正确');
+end;

@@ -1,0 +1,11 @@
+declare
+v_id test.id%type:=2;
+cursor test_cursor is select * from test where id=v_id
+for update of id;
+begin
+for test_record in test_cursor loop
+update test set name='adsf' where current of test_cursor;
+dbms_output.put_line(test_record.id||' '||test_record.name);
+end loop;
+end;
+/

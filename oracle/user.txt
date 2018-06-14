@@ -1,0 +1,7 @@
+create user li identified by li;
+
+grant connect to li;
+
+grant resource to li;
+
+conn li/li;

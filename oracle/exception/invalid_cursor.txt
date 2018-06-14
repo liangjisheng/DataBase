@@ -1,0 +1,12 @@
+declare
+cursor emp_cursor is select ename,sal from emp;
+emp_record emp_cursor%rowtype;
+begin
+fetch emp_cursor into emp_record;
+dbms_output.put_line(emp_record.ename);
+close emp_cursor;
+exception
+when invalid_cursor then
+dbms_output.put_line('请检测游标是否打开');
+end;
+/

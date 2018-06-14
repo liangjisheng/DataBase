@@ -1,0 +1,26 @@
+<<outterseg>>
+declare
+null_salary exception;
+pragma exception_init(null_salary,-20101);
+-- 异常名与异常码绑定
+begin
+<<innerStart>>
+declare
+curr_comm number;
+begin
+select comm into curr_comm from emp where empno=&empno;
+if curr_comm is null then
+raise_application_error(-20101,'Salary is missing');
+else
+dbms_output.put_line('有津贴');
+end if;
+end;
+exception
+when no_data_found then
+dbms_output.put_line('没有发现行');
+when null_salary then
+dbms_output.put_line('津贴未知');
+when others then
+dbms_output.put_line('未知异常');
+end;
+/

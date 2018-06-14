@@ -1,0 +1,19 @@
+SQL> select '从右边删除，第二个参数出现的字符' from dual;
+
+'从右边删除，第二个参数出现的字                                                 
+--------------------------------                                                
+从右边删除，第二个参数出现的字符                                                
+
+SQL> select rtrim('oracle***','*') from dual;
+
+RTRIM(                                                                          
+------                                                                          
+oracle                                                                          
+
+SQL> select rtrim('oracle','cle') from dual;
+
+RTR                                                                             
+---                                                                             
+ora                                                                             
+
+SQL> spool off;

@@ -1,0 +1,19 @@
+SQL> select '在字符串中收索指定字符'from dual;
+
+'在字符串中收索指定字                                                           
+----------------------                                                          
+在字符串中收索指定字符                                                          
+
+SQL> select instr('Information Systems Research','i') from dual;
+
+INSTR('INFORMATIONSYSTEMSRESEARCH','I')                                         
+---------------------------------------                                         
+                                      9                                         
+
+SQL> select instr('Information Systems Research','I') from dual;
+
+INSTR('INFORMATIONSYSTEMSRESEARCH','I')                                         
+---------------------------------------                                         
+                                      1                                         
+
+SQL> spool off;

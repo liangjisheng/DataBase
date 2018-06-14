@@ -1,0 +1,11 @@
+declare 
+counter number(3) :=0;
+sumResult number :=0;
+begin
+while counter<100 loop
+counter:=counter+1;
+sumResult := sumResult+counter;
+end loop;
+dbms_output.put_line('result is:'|| sumResult);
+end;
+/

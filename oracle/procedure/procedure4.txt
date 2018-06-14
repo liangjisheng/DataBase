@@ -1,0 +1,7 @@
+create or replace procedure insert_dept(
+num_deptno in number,var_dname in varchar2 default '×ÛºÏ²¿',
+var_loc in varchar2 default 'beijing' ) is
+begin
+insert into dept values(num_deptno,var_dname,var_loc);
+end;
+/

@@ -1,0 +1,12 @@
+declare
+var_ename1 varchar2(50);
+var_ename2 varchar2(50);
+begin
+var_ename1:='East';	--赋值
+var_ename2:='xiaoke';
+if length(var_ename1)<length(var_ename2) then
+--输出比较结果
+dbms_output.put_line('字符串'||var_ename1||'的长度比字符串'||var_ename2||'的长度小');
+end if;
+end;
+/

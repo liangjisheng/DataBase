@@ -1,0 +1,40 @@
+SQL> select '计算下一个星期几所对应的日期'from dual;
+
+'计算下一个星期几所对应的日                                                     
+----------------------------                                                    
+计算下一个星期几所对应的日期                                                    
+
+SQL> select sysdate,next_day(sysdate,'星期五') from dual;
+
+SYSDATE        NEXT_DAY(SYSDA                                                   
+-------------- --------------                                                   
+05-5月 -16     06-5月 -16                                                       
+
+SQL> seletct sysdate,next_day(sysdate,'friday')from dual;
+SP2-0734: 未知的命令开头 "seletct sy..." - 忽略了剩余的行。
+SQL> select sysdate,next_day(sysdate,'friday')from dual;
+select sysdate,next_day(sysdate,'friday')from dual
+                                *
+第 1 行出现错误: 
+ORA-01846: 周中的日无效 
+
+
+SQL> select '说明与选择的语言有关'from dual;
+
+'说明与选择的语言有                                                             
+--------------------                                                            
+说明与选择的语言有关                                                            
+
+SQL> select '最好使用数字' from dual;
+
+'最好使用数                                                                     
+------------                                                                    
+最好使用数字                                                                    
+
+SQL> select sysdate,next_day(sysdate,6) from dual;
+
+SYSDATE        NEXT_DAY(SYSDA                                                   
+-------------- --------------                                                   
+05-5月 -16     06-5月 -16                                                       
+
+SQL> spool off;

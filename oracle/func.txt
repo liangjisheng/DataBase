@@ -1,0 +1,92 @@
+select ascii('a'),ascii('A'),ascii('1'),ascii('9'),ascii('中'),ascii('国') from dual;
+
+select chr(97),chr(49),chr(57),chr(54992),chr(47610) from dual;
+
+select concat(id,name) from test;
+
+select concat(concat(id,': '),name) from test;
+
+select initcap(name) from test;
+
+select instr('Information Systems Research','i') from dual;
+
+select instr('Information Systems Research','I') from dual;
+
+select instr('Information Systems Research','s',16,2) from dual; -- 从第16位字符查找s第二次出现的位置
+
+select upper(name) from test;
+
+select lower(ename) from emp where rownum<6;
+
+select lpad(name,10,'0'),rpad(name,10,'0') from test; -- 占10个字符宽度，用0填充
+
+select lpad(name,10,'x'),rpad(name,10,'x') from test;
+
+select lpad(name,10),rpad(name,10) from test; -- 默认填充空格
+
+select length(ltrim(' oracle    ')),length(ltrim(' oracle  ',' ')) from dual;
+
+select ltrim(' oracle  ','roc'),ltrim('lllearner','ale') from dual;
+
+select length(rtrim(' oracle    ')),length(rtrim(' oracle  ',' ')) from dual;
+
+select rtrim(' oracle  ','roc'),rtrim('lllearner','ale') from dual;
+
+select length(trim(' oracle    ')),length(trim(' oracle  ')) from dual;
+
+select trim(leading '*' from '**oracle*') c1,trim(trailing '*' from '**oracle* ') c2 from dual;
+
+select trim(both '*' from '**oracle*') c3,trim('*' from '**ora*cle*') c4,length(trim('   oracle')) c5 from dual;
+
+select length('oracle'),lengthb('oracle'),length('数据库'),lengthb('数据库') from dual;
+
+select replace('学习数据库','数据库','oracle数据库') from dual;
+
+select substr('oracle',1,3) c1,substrb('oracle',1,3) c2  from dual;
+
+select substr('学习数据库',1,3) c3,substrb('学习数据库',1,3) c4 from dual;
+
+select substr('学习数据库',1,3) c3,substrb('学习数据库',1,4) c4 from dual;
+
+select substr('oracle',-2,3) c1,substrb('oracle',-2,3) c2 from dual;
+
+select substr('学习数据库',-2,3) c3,substrb('学习数据库',-2,3) c4 from dual;
+
+select add_months(sysdate,-2) from dual;
+
+select sysdate,add_months(sysdate,2),add_months(sysdate,-2) from dual;
+
+select add_months(to_date('01-1月-2012 11:12:13','dd-mon-yyyy hh24:mi:ss'),5) from dual;
+
+select current_date,current_timestamp from dual;
+
+select extract(year from sysdate) year,extract(month from sysdate) month,extract(day from sysdate) day from dual;
+
+select extract(hour from systimestamp)+8 hour,extract(minute from systimestamp) minute,extract(second from systimestamp) second from dual;
+
+select to_char(sysdate,'hh24') hour,to_char(sysdate,'mi') minute, to_char(sysdate,'ss') second from dual;
+
+select extract(year from date '2012-1-1') year,extract(hour from timestamp '2012-1-14 13:46:41') hour from dual;
+
+select sysdate,last_day(sysdate) from dual;
+
+select to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') d1,months_between('01-2月-12',sysdate) d2,months_between('01-2月-12',trunc(sysdate)) d3 from dual;
+
+select sysdate,next_day(sysdate,'星期五') from dual;
+
+select ename,sal+nvl(comm,0) from emp where rownum<6; -- nvl(comm,0)，若第一个参数为空值，返回第二个参数，否则返回第一个参数
+
+select ename,sal+nvl2(comm,comm,0) from emp; -- 第一个参数不为空，返回第二个参数，否则返回第三个参数
+
+select to_char(1234567,'9,999,999') c1,to_char(123.456,'9999.9999') c2,to_char(123.455,'999.99') c3 from dual;
+
+select to_char(123.4,'09999.990') c4,to_char(12.466666,'9.99') c5,to_char(1234,'$9,999') c6,to_char(12.35,'L99.9') c7 from dual;
+
+select to_char(to_date('2012-03-13','yyyy-mm-dd'),'DAY') from dual;
+
+select current_timestamp from dual;
+
+select to_number(replace('12-345-6789','-',''),'999999999') from dual;
+
+select dump('dba') a,dump('dba',16) b,dump('dba',1016) c,dump('dba',1016,2,3) d from dual;
+

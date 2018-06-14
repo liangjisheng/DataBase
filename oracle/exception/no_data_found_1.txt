@@ -1,0 +1,15 @@
+declare
+newsal emp.sal%type;
+myexp exception;
+begin
+select sal into newsal from emp where ename='JAMES';
+if newsal<5000 then 
+raise myexp;
+end if;
+exception
+when no_data_found then
+dbms_output.put_line('no recordset find');
+when myexp then
+dbms_output.put_line('sal is to less');
+end;
+/

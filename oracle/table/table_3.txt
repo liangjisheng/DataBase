@@ -1,0 +1,17 @@
+create table teacher_p4(
+t_id char(6) primary key,
+t_name varchar2(50) not null,
+t_entertime date not null
+)
+partition by range(t_entertime)
+subpartition by hash(t_id)
+(
+partition t_p1 values less than (DATE '2006-1-1') subpartitions 3,
+partition t_p2 values less than (DATE '2010-1-1')
+(
+subpartition t_p4,
+subpartition t_p5
+),
+partition t_p3 values less than(MAXVALUE) subpartitions 5
+)
+/

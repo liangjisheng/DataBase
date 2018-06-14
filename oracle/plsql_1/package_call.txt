@@ -1,0 +1,14 @@
+begin
+my_package.out_date;
+end;
+
+declare
+v_name test.name%type;
+begin
+v_name:=my_package.get_name(1);
+dbms_output.put_line('1 '||v_name);
+end;
+
+desc my_package;
+
+select text from user_source where name='MY_PACKAGE';

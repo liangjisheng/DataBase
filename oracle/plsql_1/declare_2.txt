@@ -1,0 +1,9 @@
+declare 
+pi constant number :=3.14;
+r number default 3;
+area number;
+begin 
+area := pi*r*r;
+dbms_output.put_line(area);
+end;
+/

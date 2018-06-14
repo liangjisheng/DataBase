@@ -1,0 +1,97 @@
+SQL> select '从日期时间类型数据提取特定的信息'from dual;
+
+'从日期时间类型数据提取特定的信                                                 
+--------------------------------                                                
+从日期时间类型数据提取特定的信息                                                
+
+SQL> ed
+已写入 file afiedt.buf
+
+  1  select extract(year from sysdate) year,extract(month from sysdate) month,
+  2  extract(day from sysdate) day,extract(hour from sysdate)+8 hour,
+  3  extract(minute from systimestamp) minute,extract(second from systimestamp) second
+  4* from dual
+SQL> /
+extract(day from sysdate) day,extract(hour from sysdate)+8 hour,
+                                                *
+第 2 行出现错误: 
+ORA-30076: 对析出来源无效的析出字段 
+
+
+SQL> ed
+已写入 file afiedt.buf
+
+  1  select extract(year from sysdate) year,extract(month from sysdate) month,
+  2  extract(day from sysdate) day,extract(hour from systimestamp)+8 hour,
+  3  extract(minute from systimestamp) minute,extract(second from systimestamp) second
+  4* from dual
+SQL> /
+
+      YEAR      MONTH        DAY       HOUR     MINUTE     SECOND               
+---------- ---------- ---------- ---------- ---------- ----------               
+      2016          5          5         16         22     39.406               
+
+SQL> ed
+已写入 file afiedt.buf
+
+  1  select to_char(sysdate,'hh24') hour,to_char(sysdate,'mi') minute,
+  2* to_char(sysdate,'ss') second from dual
+SQL> /
+
+HO MI SE                                                                        
+-- -- --                                                                        
+16 24 33                                                                        
+
+SQL> select extract(year from date '2012-1-1') year,extract(hour from timestamp '2012-01-14 13:46:41') hour from dual;
+
+      YEAR       HOUR                                                           
+---------- ----------                                                           
+      2012         13                                                           
+
+SQL> ed
+已写入 file afiedt.buf
+
+  1  select extract(day from (t2-t1) day to second) day,
+  2  extract(hour from (t2-t1)) hour,
+  3  extract(second from (t2-t1)) second from
+  4  (select timestamp '2011-02-04 15:07:00' t1,
+  5  timestamp '2012-05-17 19:08:46' t2 from dual)
+  6* )
+SQL> /
+)
+*
+第 6 行出现错误: 
+ORA-00933: SQL 命令未正确结束 
+
+
+SQL> ed
+已写入 file afiedt.buf
+
+  1  select extract(day from (t2-t1) day to second) day,
+  2  extract(hour from (t2-t1)) hour,
+  3  extract(second from (t2-t1)) second from
+  4  (select timestamp '2011-02-04 15:07:00' t1,
+  5  timestamp '2012-05-17 19:08:46' t2 from dual);
+  6* )
+SQL> /
+timestamp '2012-05-17 19:08:46' t2 from dual);
+                                             *
+第 5 行出现错误: 
+ORA-00911: 无效字符 
+
+
+SQL> ed
+已写入 file afiedt.buf
+
+  1  select extract(day from (t2-t1) day to second) day,
+  2  extract(hour from (t2-t1)) hour,
+  3  extract(second from (t2-t1)) second from
+  4  (select timestamp '2011-02-04 15:07:00' t1,
+  5* timestamp '2012-05-17 19:08:46' t2 from dual)
+SQL> /
+
+       DAY       HOUR     SECOND                                                
+---------- ---------- ----------                                                
+       468          4         46                                                
+
+SQL> spool off;

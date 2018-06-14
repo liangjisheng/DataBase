@@ -1,0 +1,14 @@
+declare
+cursor test_cursor(v_id number) is select * from test 
+where id=v_id;
+v_test test_cursor%rowtype;
+begin
+open test_cursor(2);
+loop
+fetch test_cursor into v_test;
+exit when test_cursor%notfound;
+dbms_output.put_line(v_test.id||' '||v_test.name);
+end loop;
+close test_cursor;
+end;
+/

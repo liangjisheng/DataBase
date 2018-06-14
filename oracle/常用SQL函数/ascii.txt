@@ -1,0 +1,7 @@
+SQL> select ascii('a'),ascii('A'),ascii('1'),ascii('9'),ascii('中'),ascii('国') from dual;
+
+ASCII('A') ASCII('A') ASCII('1') ASCII('9') ASCII('中') ASCII('国')             
+---------- ---------- ---------- ---------- ----------- -----------             
+        97         65         49         57       54992       47610             
+
+SQL> spool off

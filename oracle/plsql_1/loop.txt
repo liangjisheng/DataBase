@@ -1,0 +1,16 @@
+declare
+counter number(3) :=0;
+sumResult number :=0;
+begin
+loop
+counter := counter+1;
+sumResult := sumResult+counter;
+if counter>=100 then 
+exit;
+end if;
+-- exit when counter>=100
+-- 上一行可以代替if then end 语句
+end loop;
+dbms_output.put_line('result is:'|| to_char(sumResult));
+end;
+/

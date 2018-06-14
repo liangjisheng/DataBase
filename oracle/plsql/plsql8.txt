@@ -1,0 +1,10 @@
+declare
+age int:=55;
+begin
+if age>=56 then
+dbms_output.put_line('您可以申请退休了');
+else
+dbms_output.put_line('您小于56岁，不可以申请退休！');
+end if;
+end;
+/

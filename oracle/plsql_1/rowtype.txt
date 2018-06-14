@@ -1,0 +1,7 @@
+declare 
+myemp emp%rowtype;
+begin
+select * into myemp from emp where empno=7934;
+dbms_output.put_line(myemp.ename);
+end;
+/

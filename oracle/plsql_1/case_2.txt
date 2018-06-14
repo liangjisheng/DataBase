@@ -1,0 +1,13 @@
+declare v_grade char(1) := upper('&grade');
+p_grade varchar2(20);
+begin
+p_grade :=
+case 
+when v_grade='A' then 'Excellent'
+when v_grade='B' then 'Very Good'
+when v_grade='C' then 'Good'
+else 'No such grade'
+end;
+dbms_output.put_line('Grade:'||v_grade||',the result is '||p_grade);
+end;
+/

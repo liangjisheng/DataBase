@@ -1,0 +1,14 @@
+begin
+declare
+v_var number:='abc';
+begin
+v_var:=10;
+exception
+when others then
+dbms_output.put_line('inside statement');
+end;
+exception
+when others then
+dbms_output.put_line('outside statement');
+end;
+/

@@ -1,0 +1,8 @@
+begin
+update test set name='asdf' where id=4;
+if sql%notfound then
+dbms_output.put_line('没有找到要更新的记录');
+insert into test values(4,'asdf');
+commit;
+end if;
+end;

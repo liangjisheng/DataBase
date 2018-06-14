@@ -1,0 +1,19 @@
+declare
+month int:=10;
+begin
+	if month>=0 and month<=3 then
+		dbms_output.put_line('这是春季');
+	else if month>=4 and month<=6 then
+		dbms_output.put_line('这是夏季');
+	else if month>=7 and month<=9 then
+		dbms_output.put_line('这是秋季');
+	else if month>=10 and month<=12 then
+		dbms_output.put_line('这是冬季');
+	else
+		dbms_output.put_line('对不起，月份不合法');
+	end if;
+end if;
+end if;
+end if;
+end;
+/

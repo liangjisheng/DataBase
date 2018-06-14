@@ -1,0 +1,61 @@
+select ascii('a') from dual;
+
+select concat('li','shuyu') from dual;
+
+select concat('li','shuyu') lishuyu from dual;
+
+select instr('lishuyu','sh') from dual;
+
+select length('lishuyu') from dual;
+
+select upper('asdf') from dual;
+
+select ltrim('     lishuu') from dual;	-- 删除左边字符，默认空格
+
+select ltrim('=====lli','=') from dual; -- 删除指定字符
+
+select rtrim('     asdf     ') from dual;-- 删除右边字符，默认空格
+
+select rtrim('asdf====','=') from dual;
+
+select trim('asdf   ') from dual;
+
+select trim(both from 'asdf   ') from dual;
+
+select trim('=' from '====asdf====') from dual;
+
+select trim(trailing from 'asdf    ') from dual;	-- 删除尾部空格
+
+select trim(leading from '    asdf  ') from dual;	-- 删除头部空格
+
+select trim('='from '====asdf====') from dual;
+
+select trim(both '=' from '====asdf====') from dual;
+
+select trim(trailing 'x' from 'xxxasdfxxxx') from dual;
+
+select trim(leading 'x' from 'xxxasdfxxxx') from dual;
+
+select rtrim('xyxxasdfxyyx','xy') from dual;
+
+select ltrim('xyxxasdfxyyx','xy') from dual;
+
+select rtrim(ltrim('xyxxasdfxyyx','xy'),'xy') from dual;
+
+select trim(0 from 7500) from dual;
+
+select trim('中' from '中秋八月中') as 诗 from dual;
+
+select replace ('ABCDE','CD','AAA') from dual;
+
+select substr('ABCDE',2) from dual;
+
+select substr('abcde',2,3) from dual;
+
+select substr(ename,1,3) from emp;
+
+select upper(substr(ename,1,1)) || lower(substr(ename,2,length(ename)-1)) from emp;
+
+select lower(substr(ename,1,1)) || upper(substr(ename,2,length(ename)-1)) from emp;
+
+select replace(ename,'A','我是老虎') from emp;

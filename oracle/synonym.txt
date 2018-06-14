@@ -1,0 +1,7 @@
+conn scott/tiger;
+
+create synonym myemp for emp;
+
+select ename,job,sal from myemp where sal>2000;
+
+drop synonym myemp;

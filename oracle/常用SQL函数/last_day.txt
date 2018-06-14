@@ -1,0 +1,13 @@
+SQL> select '获取所在参数月的最后一天' from dual;
+
+'获取所在参数月的最后一                                                         
+------------------------                                                        
+获取所在参数月的最后一天                                                        
+
+SQL> select sysdate,last_day(sysdate) last_day from dual;
+
+SYSDATE        LAST_DAY                                                         
+-------------- --------------                                                   
+2016-may-05    2016-may-31                                                      
+
+SQL> spool off;

@@ -1,0 +1,66 @@
+SQL> select '返回当前会话时间，而sysdate and systimestamp返回Oracle服务器时间' from dual;
+
+'返回当前会话时间，而SYSDATEANDSYSTIMESTAMP返回ORACLE服务器时间'                
+----------------------------------------------------------------                
+返回当前会话时间，而sysdate and systimestamp返回Oracle服务器时间                
+
+SQL> select current_time from dual;
+select current_time from dual
+       *
+第 1 行出现错误: 
+ORA-00904: "CURRENT_TIME": 标识符无效 
+
+
+SQL> select current_date,current_timestamp from dual;
+
+CURRENT_DATE                                                                    
+--------------                                                                  
+CURRENT_TIMESTAMP                                                               
+---------------------------------------------------------------------------     
+05-5月 -16                                                                      
+05-5月 -16 04.15.50.000000 下午 +08:00                                          
+                                                                                
+
+SQL> alter session set nls_date_format='yyyy-mon-dd';
+
+会话已更改。
+
+SQL> select current_date,current_timestamp from dual;
+
+CURRENT_DATE                                                                    
+----------------                                                                
+CURRENT_TIMESTAMP                                                               
+---------------------------------------------------------------------------     
+2016-5月 -05                                                                    
+05-5月 -16 04.16.44.000000 下午 +08:00                                          
+                                                                                
+
+SQL> alter session set nls_timestamp_format='yyyy-mm-dd hh24:mi:ssxff';
+
+会话已更改。
+
+SQL> select current_date,current_timestamp from dual;
+
+CURRENT_DATE                                                                    
+----------------                                                                
+CURRENT_TIMESTAMP                                                               
+---------------------------------------------------------------------------     
+2016-5月 -05                                                                    
+05-5月 -16 04.17.51.000000 下午 +08:00                                          
+                                                                                
+
+SQL> alter session set nls_date_language='AMERICAN';
+
+会话已更改。
+
+SQL> select current_date,current_timestamp from dual;
+
+CURRENT_DATE                                                                    
+--------------                                                                  
+CURRENT_TIMESTAMP                                                               
+---------------------------------------------------------------------------     
+2016-may-05                                                                     
+05-MAY-16 04.18.34.000000 PM +08:00                                             
+                                                                                
+
+SQL> spool off;

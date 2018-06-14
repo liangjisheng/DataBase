@@ -1,0 +1,13 @@
+SQL> select '转换成大写' from dual;
+
+'转换成大                                                                       
+----------                                                                      
+转换成大写                                                                      
+
+SQL> select upper('asdfghjkl') from dual;
+
+UPPER('AS                                                                       
+---------                                                                       
+ASDFGHJKL                                                                       
+
+SQL> spool off;

@@ -1,0 +1,17 @@
+create table student_p4(
+s_id varchar2(10) primary key,
+s_name varchar2(20) not null,
+s_gender varchar2(2) check (s_gender in('男','女'))
+)
+partition by range(s_id)
+subpartition by list(s_gender)
+(
+partition p1 values less than ('005')
+(subpartition p_man1 values('男'), subpartition p_woman1 values('女')),
+partition p2 values less than('010')
+(subpartition p_man2 values('男'), subpartition p_woman2 values('女')),
+partition p3 values less than ('015'),
+partition p4 values less than(MAXVALUE)
+(subpartition p_man4 values('男'), subpartition p_woman4 values('女'))
+)
+/

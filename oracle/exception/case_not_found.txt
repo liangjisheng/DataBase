@@ -1,0 +1,17 @@
+create or replace procedure sp_pro1(spno number) is
+v_sal emp.sal%type;
+begin
+select sal into v_sal from emp where empno=spno;
+case
+when v_sal<1000 then
+update emp set sal=sal+100 where empno=spno;
+when v_sal<2000 then
+update emp set sal=sal+200 where empno=spno;
+end case;
+select sal into v_sal from emp where empno=spno;
+dbms_output.put_line('工号:'||spno||' 工资:'||v_sal);
+exception
+when case_not_found then
+dbms_output.put_line('case语句没有与'||v_sal||'相匹配的条件');
+end;
+/

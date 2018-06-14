@@ -1,0 +1,8 @@
+declare
+cursor test_cursor is select * from test;
+begin
+for v_test in test_cursor loop
+dbms_output.put_line(v_test.id||' '||v_test.name);
+end loop;
+end;
+/

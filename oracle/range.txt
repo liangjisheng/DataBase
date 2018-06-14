@@ -1,0 +1,24 @@
+create table stu_p1(
+s_id varchar2(10) constraint pk_stu primary key,
+s_name varchar2(10) constraint uk_stu unique
+)
+partition by range(s_id)
+(
+partition s_p1 values less than ('010'),
+partition s_p2 values less than ('020'),
+partition s_p3 values less than ('030')
+)
+
+insert into stu_p1 values ('001','lishuyu');
+
+insert into stu_p1 values ('011','zhangsan');
+
+insert into stu_p1 values ('021','lisi');
+
+select *from stu_p1;
+
+select *from stu_p1 partition (s_p1);
+
+select *from stu_p1 partition (s_p2);
+
+select *from stu_p1 partition (s_p3);

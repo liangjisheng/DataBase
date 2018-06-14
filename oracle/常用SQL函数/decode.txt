@@ -1,0 +1,21 @@
+SQL> select '类似于高级语言中的if-else 语句' from dual;
+
+'类似于高级语言中的IF-ELSE语句                                                  
+------------------------------                                                  
+类似于高级语言中的if-else 语句                                                  
+
+SQL> select t_id,t_name,t_reserach,decode(t_titled,1,'教授',2,'副教授',3,'讲师',4,'助教','其他') asd ;
+select t_id,t_name,t_reserach,decode(t_titled,1,'教授',2,'副教授',3,'讲师',4,'助教','其他') asd 
+                                                                                               *
+第 1 行出现错误: 
+ORA-00923: 未找到要求的 FROM 关键字 
+
+
+SQL> select t_id,t_name,t_reserach,decode(t_titled,1,'教授',2,'副教授',3,'讲师',4,'助教','其他') as title from dual;
+select t_id,t_name,t_reserach,decode(t_titled,1,'教授',2,'副教授',3,'讲师',4,'助教','其他') as title from dual
+                                     *
+第 1 行出现错误: 
+ORA-00904: "T_TITLED": 标识符无效 
+
+
+SQL> spool off;

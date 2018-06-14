@@ -1,0 +1,19 @@
+SQL> select '×ó±ß²¹Æë×Ö·û£¬³¤¶ÈÎªwidth' from dual;
+
+'×ó±ß²¹Æë×Ö·û£¬³¤¶ÈÎªWIDT                                                       
+-------------------------                                                       
+×ó±ß²¹Æë×Ö·û£¬³¤¶ÈÎªwidth                                                       
+
+SQL> select lpad('asdf',10,'0') from dual;
+
+LPAD('ASDF                                                                      
+----------                                                                      
+000000asdf                                                                      
+
+SQL> select lpad('asdf',10,'x') from dual;
+
+LPAD('ASDF                                                                      
+----------                                                                      
+xxxxxxasdf                                                                      
+
+SQL> spool off;

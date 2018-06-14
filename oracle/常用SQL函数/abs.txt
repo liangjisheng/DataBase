@@ -1,0 +1,13 @@
+SQL> select '绝对值' from dual;
+
+'绝对                                                                           
+------                                                                          
+绝对值                                                                          
+
+SQL> select abs(123.456),abs(0),abs(-123.456) from dual;
+
+ABS(123.456)     ABS(0) ABS(-123.456)                                           
+------------ ---------- -------------                                           
+     123.456          0       123.456                                           
+
+SQL> spool off;

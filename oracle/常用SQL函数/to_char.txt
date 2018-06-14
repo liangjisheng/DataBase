@@ -1,0 +1,87 @@
+SQL> select to_char(1234567,'9,999,999)
+  2  select to_char(1234567,'9,999,999');
+ERROR:
+ORA-01756: 引号内的字符串没有正确结束 
+
+
+SQL> select to_char(1234567,'9,999,999') from dual;
+
+TO_CHAR(12                                                                      
+----------                                                                      
+ 1,234,567                                                                      
+
+SQL> select to_char(123.456,'9999.9999') c1 from dual;
+
+C1                                                                              
+----------                                                                      
+  123.4560                                                                      
+
+SQL> select to_char(123.456,'999.99') c2 from dual;
+
+C2                                                                              
+-------                                                                         
+ 123.46                                                                         
+
+SQL> select to_char(123.4,'09999.990') c3 from dual;
+
+C3                                                                              
+----------                                                                      
+ 00123.400                                                                      
+
+SQL> select to_char(12.466666,'9.99)
+  2  
+SQL> ;
+  1* select to_char(12.466666,'9.99)
+SQL> select to_char(12.466666,'9.99') c4 from dual;
+
+C4                                                                              
+-----                                                                           
+#####                                                                           
+
+SQL> select to_char(12.35,'L99.9') c5 from dual;
+
+C5                                                                              
+---------------                                                                 
+         ￥12.4                                                                 
+
+SQL> select to_char(ststimestamp,'yyyy-mm-dd hh24:mi:ss') from dual;
+select to_char(ststimestamp,'yyyy-mm-dd hh24:mi:ss') from dual
+               *
+第 1 行出现错误: 
+ORA-00904: "STSTIMESTAMP": 标识符无效 
+
+
+SQL> select to_char(systimestamp,'yyyy-mm-dd hh24:mi:ss') from dual;
+
+TO_CHAR(SYSTIMESTAM                                                             
+-------------------                                                             
+2016-05-06 13:07:32                                                             
+
+SQL> select to_char(systimestamp,'yyyy-mm-dd hh24:mi:ss.ff3') from dual;
+
+TO_CHAR(SYSTIMESTAMP,'YYYY-MM                                                   
+-----------------------------                                                   
+2016-05-06 13:07:46.841                                                         
+
+SQL> select to_char(systimestamp,'ww') d2,to_char(sysdate,'w') d3 from dual;
+
+D2 D                                                                            
+-- -                                                                            
+19 1                                                                            
+
+SQL> select to_char(to_date('2012-03-13','yyyy-mm-dd'),'day') from dual;
+
+TO_CHA                                                                          
+------                                                                          
+星期二                                                                          
+
+SQL> select to_number(replace('12-345-6789','-',' '),'999999999') from dual;
+select to_number(replace('12-345-6789','-',' '),'999999999') from dual
+                 *
+第 1 行出现错误: 
+ORA-01722: 无效数字 
+
+
+SQL> \]
+SP2-0042: 未知命令 "\]" - 其余行忽略。
+SQL> spool off;

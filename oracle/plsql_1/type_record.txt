@@ -1,0 +1,13 @@
+declare
+type emp_record_type is record(
+name emp.ename%type,
+salary emp.sal%type,
+title emp.job%type
+);
+sp_record emp_record_type;
+begin
+select ename,sal,job into sp_record from emp 
+where empno=7788;
+dbms_output.put_line('Ô±¹¤Ãû:'||sp_record.name);
+end;
+/

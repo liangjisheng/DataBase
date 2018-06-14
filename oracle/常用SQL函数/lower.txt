@@ -1,0 +1,13 @@
+SQL> select '转换成小写' from dual;
+
+'转换成小                                                                       
+----------                                                                      
+转换成小写                                                                      
+
+SQL> select lower('LISHUYU AND LIANGJISHENG') from dual;
+
+LOWER('LISHUYUANDLIANGJI                                                        
+------------------------                                                        
+lishuyu and liangjisheng                                                        
+
+SQL> spool off;

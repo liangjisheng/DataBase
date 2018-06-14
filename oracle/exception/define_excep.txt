@@ -1,0 +1,12 @@
+create or replace procedure pro1 (spno number) is
+myex exception;
+begin
+update emp set sal=sal+1000 where empno=spno;
+if sql%notfound then
+raise myex;
+end if;
+exception
+when myex then
+dbms_output.put_line('没有更新任何用户');
+end;
+/

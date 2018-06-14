@@ -1,0 +1,15 @@
+declare
+sumsal emp.sal%type;
+begin
+select sum(sal) into sumsal from emp;
+if sumsal>20000 then
+goto first_label;
+else 
+goto second_label;
+end if;
+<<first_label>>
+dbms_output.put_line('above 20000:'||sumsal);
+<<second_label>>
+NULL;
+end;
+/

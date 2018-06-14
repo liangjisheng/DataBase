@@ -1,0 +1,14 @@
+create or replace package body my_package is
+procedure out_date is
+begin
+dbms_output.put_line(sysdate);
+end out_date;
+function get_name(v_id test.id%type)
+return test.name%type
+is
+v_name test.name%type;
+begin
+select name into v_name from test where id=v_id;
+return v_name;
+end get_name;
+end;

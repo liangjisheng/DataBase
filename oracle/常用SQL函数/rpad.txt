@@ -1,0 +1,21 @@
+SQL> select '右边补齐空格，长度为width' from dual;
+
+'右边补齐空格，长度为WIDT                                                       
+-------------------------                                                       
+右边补齐空格，长度为width                                                       
+
+SQL> select rpad('asdf',10,'0') from dual;
+
+RPAD('ASDF                                                                      
+----------                                                                      
+asdf000000                                                                      
+
+SQL> select rpad('asdf',10,'x') from dual;
+
+RPAD('ASDF                                                                      
+----------                                                                      
+asdfxxxxxx                                                                      
+
+SQL> apool off;
+SP2-0042: 未知命令 "apool off" - 其余行忽略。
+SQL> spool off;

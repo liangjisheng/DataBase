@@ -1,0 +1,15 @@
+SQL> select dump('dba') a,dump('dba',16) b,
+  2  dump ('dba',1016) c,dump('dba',1016,2,3) d from dual;
+
+A                       B                                                       
+----------------------- ----------------------                                  
+C                                                                               
+--------------------------------------------                                    
+D                                                                               
+-----------------------------------------                                       
+Typ=96 Len=3: 100,98,97 Typ=96 Len=3: 64,62,61                                  
+Typ=96 Len=3 CharacterSet=ZHS16GBK: 64,62,61                                    
+Typ=96 Len=3 CharacterSet=ZHS16GBK: 62,61                                       
+                                                                                
+
+SQL> spool off;

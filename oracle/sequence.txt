@@ -1,0 +1,19 @@
+conn sys/tiger as sysdba;
+
+grant create sequence to scott;
+
+conn scott/tiger;
+
+create sequence myseq minvalue 1 start with 1 nomaxvalue increment by 1 nocycle cache 30;
+
+select myseq.nextval from dual;
+
+select myseq.currval from dual;
+
+select myseq.nextval from dual;
+
+select myseq.currval from dual;
+
+alter sequence maxvalue 10000 minvalue -300;
+
+drop sequence myseq;

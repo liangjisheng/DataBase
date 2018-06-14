@@ -1,0 +1,48 @@
+SQL> select '使用round 对日期进行四舍五入' from dual;
+
+'使用ROUND对日期进行四舍五入                                                    
+----------------------------                                                    
+使用round 对日期进行四舍五入                                                    
+
+SQL> select round(to_date('2012-6-15 11:59:59','yyyy-mm-dd hh24:mi:ss')) d1 from dual;
+
+D1                                                                              
+--------------                                                                  
+15-6月 -12                                                                      
+
+SQL> select to_char(round(to_date('2012-6-15 11:59:59','yyyy-mm-dd hh24:mi:ss')),'yyyy-mm-dd hh24:mi:ss') d2 from dual;
+
+D2                                                                              
+-------------------                                                             
+2012-06-15 00:00:00                                                             
+
+SQL> select round(to_date('2012-6-15 12:00:00','yyyy-mm-dd hh24:mi:ss')) d3 from dual;
+
+D3                                                                              
+--------------                                                                  
+16-6月 -12                                                                      
+
+SQL> select to_char(round(to_date('2012-6-15 12:00:00','yyyy-mm-dd hh24:mi:ss')),'yyyy-mm-dd hh24:mi:ss) d4 from dual;
+ERROR:
+ORA-01756: 引号内的字符串没有正确结束 
+
+
+SQL> select to_char(round(to_date('2012-6-15 12:00:00','yyyy-mm-dd hh24:mi:ss')),'yyyy-mm-dd hh24:mi:ss') d4 from dual;
+
+D4                                                                              
+-------------------                                                             
+2012-06-16 00:00:00                                                             
+
+SQL> select round(date '2012-6-15','mm') d1,round(date '2012-6-16','mm') d2 from dual;
+
+D1             D2                                                               
+-------------- --------------                                                   
+01-6月 -12     01-7月 -12                                                       
+
+SQL> select round(date '2012-6-30','yy') d3,round(date '2012-7-1') d4 from dual;
+
+D3             D4                                                               
+-------------- --------------                                                   
+01-1月 -12     01-7月 -12                                                       
+
+SQL> spool off;

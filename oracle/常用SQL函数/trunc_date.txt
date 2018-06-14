@@ -1,0 +1,76 @@
+SQL> select trunc(to_date('2012-6-15 11:59:59','yyyy-mm-dd hh24:mi:ss')) d1 from dual;
+
+D1                                                                              
+--------------                                                                  
+15-6月 -12                                                                      
+
+SQL> select to_char(trunc(to_date('2012-6-15 11:59:59','yyyy-mm-dd hh24:mi:ss')),'yyyy-mm-dd hh24:mi:ss') d2 from dual;
+
+D2                                                                              
+-------------------                                                             
+2012-06-15 00:00:00                                                             
+
+SQL> select trunc(to_date('2016-5-5 12:00:00','yyyy-mm-dd hh24:mi:ss')) d3 from dual;
+
+D3                                                                              
+--------------                                                                  
+05-5月 -16                                                                      
+
+SQL> select to_char(trunc(to_date('2012-6-15 12:59:59','yyyy-mm-dd hh24:mi:ss'),'hh'),'yyyy-mm-dd hh24:mi:ss') d1 from dual;
+
+D1                                                                              
+-------------------                                                             
+2012-06-15 12:00:00                                                             
+
+SQL> 
+SQL> select to_char(trunc(to_date('2012-6-15 12:59:59','yyyy-mm-dd hh24:mi:ss'),'mi'),'yyyy-mm-dd hh24:mi:ss') d1 from dual;
+
+D1                                                                              
+-------------------                                                             
+2012-06-15 12:59:00                                                             
+
+SQL> select trunc(date '2012-4-5','yy') d1 from dual;
+
+D1                                                                              
+--------------                                                                  
+01-1月 -12                                                                      
+
+SQL> select trunc(date '2012-12-30','mm') d2 from dual;
+
+D2                                                                              
+--------------                                                                  
+01-12月-12                                                                      
+
+SQL> create table test(id number(2),entertime date);
+
+表已创建。
+
+SQL> insert into test values(1,trunc(sysdate));
+
+已创建 1 行。
+
+SQL> insert into test values(2,sysdate);
+
+已创建 1 行。
+
+SQL> select *from test;
+
+        ID ENTERTIME                                                            
+---------- --------------                                                       
+         1 05-5月 -16                                                           
+         2 05-5月 -16                                                           
+
+SQL> select id,to_char(entertime,'yyyy-mm-dd hh24:mi:ss') from test;
+
+        ID TO_CHAR(ENTERTIME,'                                                  
+---------- -------------------                                                  
+         1 2016-05-05 00:00:00                                                  
+         2 2016-05-05 17:09:43                                                  
+
+SQL> select *from test where entertime='05-5月-16';
+
+        ID ENTERTIME                                                            
+---------- --------------                                                       
+         1 05-5月 -16                                                           
+
+SQL> spool off;

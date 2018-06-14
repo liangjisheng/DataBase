@@ -1,0 +1,9 @@
+declare
+Num_sal number;		--声明一个数值变量
+Var_ename varchar2(20);	--声明一个字符串变量
+begin
+select ename,sal into Var_ename,Num_sal from emp
+where empno=7369;
+dbms_output.put_line(Var_ename||'的工资是'||Num_sal);--输出变量值
+end;
+/

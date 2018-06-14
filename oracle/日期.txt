@@ -1,0 +1,58 @@
+select sysdate,add_months(sysdate,5) from dual; --当前日期，以加上5个月之后的日期
+
+select sysdate,last_day(sysdate) from dual; -- 指定日期的最后一天
+
+select sysdate,round(sysdate),round(sysdate,'DAY'),round(sysdate,'MONTH'),round(sysdate,'YEAR') from dual;
+
+select sysdate,trunc(sysdate),trunc(sysdate,'DAY'),trunc(sysdate,'MONTH'),trunc(sysdate,'YEAR') from dual;
+
+select sysdate "date",extract(year from sysdate) "year",
+extract(month from sysdate) "month",
+extract(day from sysdate) "day",
+extract(hour from systimestamp) "hour",
+extract(minute from systimestamp) "minute",
+extract(second from systimestamp) "second"
+from dual; -- 提取日期的各个部分
+
+select to_char(sysdate,'yyyy"年"mm"月"dd"日" hh24:mi:ss') "date" from dual;
+
+select to_char(-123123.45,'L9.9eeeepr') "date" from dual;
+
+select to_number('-$12,345.67','$99,999.99') "num" from dual;
+
+-- 工资低于2000的如果没有奖金，则发放100奖金
+nvl(x,value1); -- 若x为空，返回value,否则返回x
+select ename,job,sal,nvl(comm,100) from emp where sal<2000;
+
+nvl2(x,value1,value2) -- 若x非空，返回value1，否则返回value2.
+
+emp表工资低于2000以下的员工，若果没有奖金，则奖金为200，如果有奖金，则在原来的奖金基础上家100元
+select ename,job,sal,nvl2(comm,comm+100,200) "comm" from emp where sal<2000;
+
+select sum(sal) from emp;
+
+select deptno,avg(sal) from emp group by deptno;
+
+select count(1) from emp;
+
+select ename,job,sal from emp where sysdate>=add_months(hiredate,8); --查找以入职8月多的员工
+
+select ename,job,sal from emp where sysdate>=add_months(hiredate,8); --查找以入职10年多的员工
+
+select floor(sysdate-hiredate) "入职天数",ename from emp; -- 员工入职天数
+
+select trunc(sysdate-hiredate) "入职天数",ename from emp;
+
+select hiredate,ename from emp where last_day(hiredate)-2=hiredate; --查找倒数第三天受雇的所有员工
+
+select ename,to_char(hiredate,'yyyy-mm-dd hh24:mi:ss') from emp;
+
+select ename,to_char(hiredate,'yyyy-mm-dd hh24:mi:ss'),to_char(sal,'L99999.99') from emp;
+
+select ename,job,sal from emp where to_char(hiredate,'yyyy')=1980; --查找1980年入职的员工
+
+select ename,job,sal from emp where to_char(hiredate,'mm')=12; --查找12月份入职的员工
+
+select sys_context('USERENV','db_name') from dual;
+
+select sys_context('USERENV','current_schema') from dual;

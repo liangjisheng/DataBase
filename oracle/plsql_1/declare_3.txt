@@ -1,0 +1,19 @@
+declare 
+name_1 varchar2(20) default 'li';
+name_2 varchar2(20) default 'zhao';
+name_3 constant varchar2(20) :='qian';
+name_4 constant varchar2(20) :='sun';
+num_1 number default 1;
+num_2 number default 2;
+num_3 number default 3;
+num_4 number default 4;
+re number;
+begin
+dbms_output.put_line(name_1);
+dbms_output.put_line(name_2);
+dbms_output.put_line(name_3);
+dbms_output.put_line(name_4);
+re := num_1 + num_2 + num_3 + num_4;
+dbms_output.put_line(re);
+end;
+/

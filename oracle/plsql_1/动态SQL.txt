@@ -1,0 +1,23 @@
+declare
+sql_stmt varchar2(200); -- 动态SQL语句
+emp_id number(4):=7566;
+salary number(7,2);
+dept_id number(2):=90;
+dept_name varchar2(14) := 'PERSONNEL';
+location varchar2(13):='DALLAS';
+emp_rec emp%rowtype;
+begin
+-- 无子句的execute immediate
+execute immediate 'create table bonus1(id number,amt number)';
+-- using子句execute immediate
+sql_stmt:='insert into dept values(:1,:2,:3)';
+execute immediate sql_stmt using dept_id,dept_name,location;
+-- into 子句的execute immediate
+sql_stmt:='select * from emp where empno=:id';
+execute immediate sql_stmt into emp_rec using emp_id;
+-- returning into 子句的execute immediate
+sql_stmt:= 'update emp set sal=2000 where empno=:1 returning sal into :2';
+execute immediate sql_stmt using emp_id returning into salary;
+execute immediate 'delete from dept where deptno=:num' using dept_id;
+end;
+/

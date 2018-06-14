@@ -1,0 +1,9 @@
+declare 
+newsal emp.sal%type;
+begin
+select sal into newsal from emp where ename='JAMES';
+if newsal>900 then
+update emp set comm=800 where ename='JAMES';
+end if;
+end;
+/

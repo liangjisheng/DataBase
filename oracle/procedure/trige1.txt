@@ -1,0 +1,15 @@
+create trigger tri_dept
+before insert or update or delete on dept
+declare
+var_tag varchar2(10);
+begin
+if inserting then
+var_tag:='²åÈë';
+elsif updating then
+var_tag:='ĞŞ¸Ä';
+elsif deleting then
+var_tag:='É¾³ı';
+end if;
+insert into dept_log values(var_tag,sysdate);
+end tri_dept;
+/
